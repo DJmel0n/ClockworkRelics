@@ -1,4 +1,6 @@
 {
   "itemGroup.clockwork_relics": "Clockwork Relics",
-  "item.clockwork_relics.chronometer": "Chronometer"
+  "item.clockwork_relics.chronometer": "Chronometer",
+  "tooltip.clockwork_relics.chronometer.effect": "Grants Speed I for 7 seconds when damaged.",
+  "tooltip.clockwork_relics.chronometer.cooldown": "Cooldown: 45 seconds."
 }

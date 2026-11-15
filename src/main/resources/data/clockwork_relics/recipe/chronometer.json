@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZMM",
+    "MCM",
+    "MMZ"
+  ],
+  "key": {
+    "Z": {
+      "item": "minecraft:gold_ingot"
+    },
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "C": {
+      "item": "minecraft:clock"
+    }
+  },
+  "result": {
+    "id": "clockwork_relics:chronometer",
+    "count": 1
+  }
+}

@@ -1,4 +1,6 @@
 {
   "itemGroup.clockwork_relics": "Clockwork Relics",
-  "item.clockwork_relics.chronometer": "Хронометр"
+  "item.clockwork_relics.chronometer": "Хронометр",
+  "tooltip.clockwork_relics.chronometer.effect": "При получении урона даёт Скорость I на 7 секунд.",
+  "tooltip.clockwork_relics.chronometer.cooldown": "Перезарядка: 45 секунд."
 }
