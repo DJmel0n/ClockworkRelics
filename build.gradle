@@ -27,9 +27,20 @@ sourceSets.main.resources {
 }
 
 repositories {
+    // Curios API
     maven {
         name = "Curios"
         url = "https://maven.theillusivec4.top/"
+    }
+
+    // Create, Ponder, Flywheel
+    maven {
+        url = "https://maven.createmod.net"
+    }
+
+    // Registrate
+    maven {
+        url = "https://maven.ithundxr.dev/snapshots"
     }
 }
 
@@ -120,6 +131,20 @@ configurations {
 
 dependencies {
     implementation "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"// Example optional mod dependency with JEI
+    // Create
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") {
+        transitive = false
+    }
+
+    // Ponder
+    implementation "net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}"
+
+    // Flywheel
+    compileOnly "dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}"
+    runtimeOnly "dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}"
+
+    // Registrate
+    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
