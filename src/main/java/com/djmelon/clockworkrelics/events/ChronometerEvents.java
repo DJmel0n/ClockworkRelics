@@ -1,3 +1,4 @@
+
 package com.djmelon.clockworkrelics.events;
 
 import com.djmelon.clockworkrelics.ClockworkRelics;
@@ -9,6 +10,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+
+import net.minecraft.network.chat.Component;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import top.theillusivec4.curios.api.CuriosApi;
 
@@ -28,41 +32,83 @@ public class ChronometerEvents {
         }
 
         boolean hasChronometer = CuriosApi.getCuriosInventory(player)
-                .map(handler -> handler.findFirstCurio(
-                        stack -> stack.is(ClockworkRelics.CHRONOMETER.get()),
-                        "relic"
-                ).isPresent())
+                .map(handler -> handler.findCurios("relic").stream()
+                        .anyMatch(result ->
+                                result.stack().is(ClockworkRelics.CHRONOMETER.get())
+                        ))
                 .orElse(false);
-        
+
         if (!hasChronometer) {
             return;
         }
-        
+
         long currentTime = player.level().getGameTime();
-        
+
         long nextActivation = COOLDOWNS.getOrDefault(
                 player.getUUID(), 0L
         );
-        
+
         if (currentTime < nextActivation) {
             return;
         }
+
         if (player.hasEffect(MobEffects.MOVEMENT_SPEED)) {
             return;
         }
+
         // Запускаем перезарядку
         COOLDOWNS.put(
                 player.getUUID(),
                 currentTime + COOLDOWN_TICKS
         );
-        
-        // Выдаём скорость I на 7 секунд
+
+        // Выдаём скорость II на 7 секунд
         player.addEffect(new MobEffectInstance(
                 MobEffects.MOVEMENT_SPEED,
                 EFFECT_TICKS,
-                0,
+                1,
                 false,
                 true
         ));
+    }
+    @SubscribeEvent
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
+        if (!(event.getEntity() instanceof ServerPlayer player)) {
+            return;
+        }
+
+        // Обновляем отображение раз в секунду
+        if (player.tickCount % 20 != 0) {
+            return;
+        }
+
+        boolean hasChronometer = CuriosApi.getCuriosInventory(player)
+                .map(handler -> handler.findCurios("relic").stream()
+                        .anyMatch(result ->
+                                result.stack().is(ClockworkRelics.CHRONOMETER.get())
+                        ))
+                .orElse(false);
+
+        if (!hasChronometer) {
+            return;
+        }
+
+        long currentTime = player.level().getGameTime();
+        long nextActivation = COOLDOWNS.getOrDefault(player.getUUID(), 0L);
+        long remainingTicks = nextActivation - currentTime;
+
+        if (remainingTicks <= 0) {
+            return;
+        }
+
+        int seconds = (int) Math.ceil(remainingTicks / 20.0);
+
+        player.displayClientMessage(
+                Component.translatable(
+                        "message.clockwork_relics.chronometer.cooldown",
+                        seconds
+                ),
+                true
+        );
     }
 }

@@ -1,6 +1,16 @@
 {
   "itemGroup.clockwork_relics": "Clockwork Relics",
   "item.clockwork_relics.chronometer": "Хронометр",
-  "tooltip.clockwork_relics.chronometer.effect": "При получении урона даёт Скорость I на 7 секунд.",
-  "tooltip.clockwork_relics.chronometer.cooldown": "Перезарядка: 45 секунд."
+  "item.clockwork_relics.unassembled_gyroscopic_stabilizer": "Несобранный гироскопический стабилизатор",
+  "item.clockwork_relics.gyroscopic_stabilizer": "Гироскопический стабилизатор",
+  "item.clockwork_relics.chronometer.tooltip.summary": "Точный механизм, реагирующий на повреждения владельца.",
+  "item.clockwork_relics.chronometer.tooltip.condition1": "При получении урона",
+  "item.clockwork_relics.chronometer.tooltip.behaviour1": "Даёт _Скорость II_ на _7 секунд_.",
+  "item.clockwork_relics.chronometer.tooltip.condition2": "Перезарядка",
+  "item.clockwork_relics.chronometer.tooltip.behaviour2": "_45 секунд_.",
+  "message.clockwork_relics.chronometer.cooldown": "Хронометр: перезарядка — %s сек.",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.summary": "Механический гироскоп, предназначенный для стабилизации положения владельца.",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.condition1": "Пассивный эффект",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.behaviour1": "Снижает получаемый урон от падения на _20%%_.",
+  "message.clockwork_relics.chronometer.cooldown": "Хронометр: перезарядка — %s сек."
 }

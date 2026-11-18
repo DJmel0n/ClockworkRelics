@@ -1,0 +1,14 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "clockwork_relics:unassembled_gyroscopic_stabilizer"
+    }
+  ],
+  "results": [
+    {
+      "id": "clockwork_relics:gyroscopic_stabilizer",
+      "count": 1
+    }
+  ]
+}

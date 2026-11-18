@@ -32,9 +32,17 @@ public class ClockworkRelics {
     // Первый талисман — Хронометр
     public static final DeferredItem<Item> CHRONOMETER =
             ITEMS.register("chronometer",
-                    () -> new Item(new Item.Properties()));
+                    () -> new Item(new Item.Properties().stacksTo(1)));
+   	// Несобранный гироскопический стабилизатор
+   	public static final DeferredItem<Item> UNASSEMBLED_GYROSCOPIC_STABILIZER =
+   	        ITEMS.register("unassembled_gyroscopic_stabilizer",
+   	                () -> new Item(new Item.Properties().stacksTo(1)));
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
 	        DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+	// Собранный гироскопический стабилизатор
+	public static final DeferredItem<Item> GYROSCOPIC_STABILIZER =
+	        ITEMS.register("gyroscopic_stabilizer",
+	                () -> new Item(new Item.Properties().stacksTo(1)));
 	
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB =
 	        CREATIVE_MODE_TABS.register("main", () -> CreativeModeTab.builder()
@@ -43,6 +51,8 @@ public class ClockworkRelics {
 	                .icon(() -> CHRONOMETER.get().getDefaultInstance())
 	                .displayItems((parameters, output) -> {
 	                    output.accept(CHRONOMETER.get());
+	                    output.accept(UNASSEMBLED_GYROSCOPIC_STABILIZER.get());
+	                    output.accept(GYROSCOPIC_STABILIZER.get());
 	                })
 	                .build());
 

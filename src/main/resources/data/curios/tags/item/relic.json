@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "clockwork_relics:chronometer"
+    "clockwork_relics:chronometer",
+    "clockwork_relics:gyroscopic_stabilizer"
   ]
 }

@@ -1,6 +1,15 @@
 {
   "itemGroup.clockwork_relics": "Clockwork Relics",
   "item.clockwork_relics.chronometer": "Chronometer",
-  "tooltip.clockwork_relics.chronometer.effect": "Grants Speed I for 7 seconds when damaged.",
-  "tooltip.clockwork_relics.chronometer.cooldown": "Cooldown: 45 seconds."
+  "item.clockwork_relics.unassembled_gyroscopic_stabilizer": "Unassembled Gyroscopic Stabilizer",
+  "item.clockwork_relics.gyroscopic_stabilizer": "Gyroscopic Stabilizer",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.summary": "A mechanical gyroscope designed to stabilize its owner's position.",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.condition1": "Passive effect",
+  "item.clockwork_relics.gyroscopic_stabilizer.tooltip.behaviour1": "Reduces incoming fall damage by _20%%_.",
+  "item.clockwork_relics.chronometer.tooltip.summary": "A precision mechanism that reacts to its owner's injuries.",
+  "item.clockwork_relics.chronometer.tooltip.condition1": "When damaged",
+  "item.clockwork_relics.chronometer.tooltip.behaviour1": "Grants _Speed II_ for _7 seconds_.",
+  "item.clockwork_relics.chronometer.tooltip.condition2": "Cooldown",
+  "item.clockwork_relics.chronometer.tooltip.behaviour2": "_45 seconds_.",
+  "message.clockwork_relics.chronometer.cooldown": "Chronometer: cooldown — %s sec."
 }

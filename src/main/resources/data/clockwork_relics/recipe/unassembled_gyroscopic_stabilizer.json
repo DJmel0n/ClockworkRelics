@@ -1,0 +1,30 @@
+{
+  "type": "create:mechanical_crafting",
+  "pattern": [
+    "LBA",
+    "CSL",
+    "ABA"
+  ],
+  "key": {
+    "L": {
+      "item": "create:brass_block"
+    },
+    "B": {
+      "item": "create:brass_sheet"
+    },
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    },
+    "S": {
+      "item": "create:cogwheel"
+    }
+  },
+  "result": {
+    "id": "clockwork_relics:unassembled_gyroscopic_stabilizer",
+    "count": 1
+  },
+  "accept_mirrored": false
+}
